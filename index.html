@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Política de Privacidad — IA Driver Calc Pro</title>
+  <style>
+    :root {
+      --bg:        #06060F;
+      --bg2:       #0F0F26;
+      --card:      #1A1A38;
+      --border:    #3D2B70;
+      --violet:    #A040FF;
+      --green:     #69F0AE;
+      --amber:     #FFD740;
+      --red:       #FF5370;
+      --text:      #EAEAEA;
+      --sub:       #9090B0;
+      --dim:       #50506A;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    header {
+      background: linear-gradient(135deg, #0D0D2A 0%, #1A0A38 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 48px 24px 40px;
+      text-align: center;
+    }
+    .shield { font-size: 56px; margin-bottom: 16px; display: block; }
+    header h1 {
+      font-size: clamp(22px, 5vw, 32px);
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      background: linear-gradient(90deg, var(--violet), #C080FF);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 8px;
+    }
+    .tagline {
+      color: var(--sub);
+      font-size: 14px;
+      letter-spacing: 0.5px;
+    }
+    .badge-date {
+      display: inline-block;
+      margin-top: 16px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 4px 14px;
+      font-size: 12px;
+      color: var(--sub);
+    }
+
+    /* ── Trust pills ── */
+    .trust-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      padding: 24px 16px;
+      border-bottom: 1px solid #22224A;
+    }
+    .pill {
+      background: rgba(105, 240, 174, 0.10);
+      border: 1px solid rgba(105, 240, 174, 0.25);
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: 12px;
+      color: var(--green);
+      font-weight: 600;
+    }
+
+    /* ── Layout ── */
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+
+    /* ── TOC ── */
+    .toc {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 40px;
+    }
+    .toc h2 { color: var(--violet); font-size: 13px; letter-spacing: 1px; margin-bottom: 14px; }
+    .toc ol { padding-left: 18px; }
+    .toc li { margin-bottom: 6px; }
+    .toc a { color: var(--sub); text-decoration: none; font-size: 14px; }
+    .toc a:hover { color: var(--violet); }
+
+    /* ── Sections ── */
+    section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 24px;
+      margin-bottom: 20px;
+      border-top: 3px solid var(--violet);
+    }
+    section.green-top  { border-top-color: var(--green); }
+    section.amber-top  { border-top-color: var(--amber); }
+
+    h2.section-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    h2.section-title .ico { font-size: 22px; }
+
+    h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--violet);
+      margin: 20px 0 8px;
+    }
+
+    p { color: var(--sub); margin-bottom: 10px; }
+    p:last-child { margin-bottom: 0; }
+
+    /* ── No-collect grid ── */
+    .no-collect-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 10px;
+      margin: 14px 0;
+    }
+    .no-item {
+      background: rgba(255, 83, 112, 0.07);
+      border: 1px solid rgba(255, 83, 112, 0.20);
+      border-radius: 10px;
+      padding: 10px 12px;
+      font-size: 13px;
+      color: #FF8A9A;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .no-item::before { content: "✕"; color: var(--red); font-weight: 700; }
+
+    /* ── Permission cards ── */
+    .perm-card {
+      background: rgba(160, 64, 255, 0.06);
+      border: 1px solid rgba(160, 64, 255, 0.20);
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 12px;
+    }
+    .perm-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .perm-desc { font-size: 13px; color: var(--sub); margin-bottom: 8px; }
+    .perm-guarantee {
+      font-size: 12px;
+      color: var(--green);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .perm-guarantee::before { content: "✓"; }
+
+    /* ── Badge disabled ── */
+    .badge-off {
+      display: inline-block;
+      background: rgba(255, 83, 112, 0.15);
+      border: 1px solid rgba(255, 83, 112, 0.35);
+      border-radius: 6px;
+      padding: 2px 8px;
+      font-size: 11px;
+      color: var(--red);
+      font-weight: 700;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+
+    /* ── Guarantees ── */
+    .guarantee-list {
+      list-style: none;
+      margin-top: 14px;
+    }
+    .guarantee-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 10px;
+      color: var(--sub);
+      font-size: 14px;
+    }
+    .guarantee-list li::before {
+      content: "✓";
+      color: var(--green);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* ── Contact ── */
+    .contact-box {
+      background: rgba(160, 64, 255, 0.08);
+      border: 1px solid rgba(160, 64, 255, 0.25);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+    }
+    .contact-box p { margin-bottom: 14px; }
+    .btn-contact {
+      display: inline-block;
+      background: var(--violet);
+      color: #0A0A1C;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 12px 28px;
+      border-radius: 10px;
+      text-decoration: none;
+    }
+
+    /* ── Table ── */
+    table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 13px; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #22224A; }
+    th { color: var(--violet); font-weight: 600; }
+    td { color: var(--sub); }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 32px 16px;
+      color: var(--dim);
+      font-size: 12px;
+      border-top: 1px solid #22224A;
+    }
+    footer strong { color: var(--sub); }
+
+    /* ── Responsive ── */
+    @media (max-width: 480px) {
+      .no-collect-grid { grid-template-columns: 1fr; }
+      header { padding: 36px 16px 28px; }
+      .container { padding: 24px 14px 60px; }
+      section { padding: 20px 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════ HEADER ════════════════════════════════════ -->
+<header>
+  <span class="shield">🛡️</span>
+  <h1>IA Driver Calc Pro</h1>
+  <p class="tagline">POLÍTICA DE PRIVACIDAD</p>
+  <span class="badge-date">Última actualización: Mayo 2026</span>
+</header>
+
+<!-- ── Trust strip ── -->
+<div class="trust-strip">
+  <span class="pill">✓ Sin registro</span>
+  <span class="pill">✓ Sin datos personales</span>
+  <span class="pill">✓ Sin publicidad</span>
+  <span class="pill">✓ Todo procesamiento local</span>
+  <span class="pill">✓ Sin venta de datos</span>
+  <span class="pill">✓ Sin rastreo</span>
+</div>
+
+<!-- ════════════════════════════════════ CONTENT ════════════════════════════════════ -->
+<div class="container">
+
+  <!-- TOC -->
+  <nav class="toc">
+    <h2>CONTENIDO</h2>
+    <ol>
+      <li><a href="#intro">Introducción</a></li>
+      <li><a href="#no-recopila">Lo que NO recopilamos</a></li>
+      <li><a href="#permisos">Permisos y su uso</a></li>
+      <li><a href="#terceros">Servicios de terceros</a></li>
+      <li><a href="#local">Almacenamiento local</a></li>
+      <li><a href="#seguridad">Seguridad</a></li>
+      <li><a href="#menores">Menores de edad</a></li>
+      <li><a href="#cambios">Cambios a esta política</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ol>
+  </nav>
+
+  <!-- ── 1. INTRO ── -->
+  <section id="intro">
+    <h2 class="section-title"><span class="ico">📱</span> 1. Introducción</h2>
+    <p>
+      <strong style="color:var(--text)">IA Driver Calc Pro</strong> es una aplicación Android desarrollada por
+      <strong style="color:var(--text)">Nicolás Gabriel Espínola (Sudo Capi)</strong> para conductores profesionales
+      de plataformas de rideshare (Uber, DiDi, Cabify, 99, InDriver). La app analiza ofertas de viaje en tiempo
+      real y calcula si cada viaje es rentable — todo sin internet y sin enviar ningún dato fuera de tu celular.
+    </p>
+
+    <table>
+      <tr><th>Campo</th><th>Detalle</th></tr>
+      <tr><td>Nombre de la app</td><td>IA Driver Calc Pro</td></tr>
+      <tr><td>Package</td><td>com.sudocapi.ia_driver_calc_pro</td></tr>
+      <tr><td>Desarrollador</td><td>Nicolás Gabriel Espínola / Sudo Capi</td></tr>
+      <tr><td>Contacto</td><td>soporte@sudocapi.com</td></tr>
+      <tr><td>Mercados</td><td>Argentina, Brasil, México, Colombia, Perú, Chile</td></tr>
+      <tr><td>Vigencia</td><td>Mayo 2026 en adelante</td></tr>
+    </table>
+
+    <p>
+      Al instalar y usar esta aplicación, aceptás los términos descritos en esta política.
+      Si no estás de acuerdo, desinstalá la app.
+    </p>
+  </section>
+
+  <!-- ── 2. NO RECOPILA ── -->
+  <section id="no-recopila" class="green-top">
+    <h2 class="section-title"><span class="ico">🚫</span> 2. Lo que NO recopilamos</h2>
+    <p>Antes de explicar qué hacemos, es importante aclarar qué <strong style="color:var(--text)">no hacemos jamás</strong>:</p>
+
+    <div class="no-collect-grid">
+      <div class="no-item">Nombre o apellido</div>
+      <div class="no-item">Correo electrónico</div>
+      <div class="no-item">Número de teléfono</div>
+      <div class="no-item">DNI o identificación</div>
+      <div class="no-item">Fotos o videos personales</div>
+      <div class="no-item">Historial de viajes de Uber</div>
+      <div class="no-item">Ubicación exacta GPS</div>
+      <div class="no-item">Datos bancarios o de pago</div>
+      <div class="no-item">Contactos del celular</div>
+      <div class="no-item">Mensajes o emails</div>
+      <div class="no-item">Contraseñas de ningún tipo</div>
+      <div class="no-item">Actividad en otras apps</div>
+    </div>
+
+    <ul class="guarantee-list">
+      <li>No existe ningún servidor de Sudo Capi que almacene datos personales de usuarios.</li>
+      <li>No existe ningún sistema de cuentas: no te registrás ni iniciás sesión.</li>
+      <li>Jamás se venden, comparten ni comercializan datos de ningún tipo con terceros.</li>
+    </ul>
+  </section>
+
+  <!-- ── 3. PERMISOS ── -->
+  <section id="permisos">
+    <h2 class="section-title"><span class="ico">🔐</span> 3. Permisos y su uso</h2>
+    <p>La app solicita permisos especiales del sistema Android. Aquí explicamos exactamente para qué sirve cada uno:</p>
+
+    <!-- Accesibilidad -->
+    <div class="perm-card">
+      <div class="perm-title">👁️ Servicio de Accesibilidad</div>
+      <p class="perm-desc">
+        Lee el texto que muestra la pantalla de las apps de rideshare (Uber, DiDi, Cabify, 99, InDriver)
+        para extraer datos de la oferta de viaje: precio, kilómetros y minutos. Con esos datos calcula
+        si el viaje es rentable y lo anuncia en voz alta. <strong>Solo lee las apps listadas</strong>
+        en la configuración — nunca lee WhatsApp, bancarias, mensajes ni ninguna otra app.
+        Todo el procesamiento ocurre en el chip del celular. Ningún texto de pantalla sale del dispositivo.
+      </p>
+      <div class="perm-guarantee">No se almacena ni transmite ningún texto capturado de pantalla.</div>
+    </div>
+
+    <!-- GPS -->
+    <div class="perm-card">
+      <div class="perm-title">📍 Ubicación GPS en segundo plano</div>
+      <p class="perm-desc">
+        Se usa para el <strong>Oráculo de Demanda</strong>: comparar la posición del conductor con las
+        zonas de alta demanda de su ciudad (eventos, partidos, vuelos). Tu ubicación nunca se sube a
+        ningún servidor. Solo se usa localmente para calcular qué eventos están cerca.
+        No se guarda ningún historial de ubicaciones.
+      </p>
+      <div class="perm-guarantee">La ubicación GPS nunca abandona tu celular.</div>
+    </div>
+
+    <!-- Cámara y micrófono -->
+    <div class="perm-card">
+      <div class="perm-title">📷 Cámara y Micrófono — Dashcam</div>
+      <p class="perm-desc">
+        Opcionales. Se usan exclusivamente para la función <strong>Dashcam</strong>: grabar video
+        del trayecto como registro de seguridad. Los videos se guardan en la galería del celular
+        (carpeta local). Nunca se suben a ningún servidor ni se comparten automáticamente.
+        Podés usar la app perfectamente sin activar la cámara.
+      </p>
+      <div class="perm-guarantee">Los videos del Dashcam solo existen en tu celular.</div>
+    </div>
+
+    <!-- Notificaciones Listener -->
+    <div class="perm-card">
+      <div class="perm-title">⚡ Acceso a Notificaciones (Fast-Path)</div>
+      <p class="perm-desc">
+        Permiso opcional que permite leer las notificaciones de las apps de rideshare para detectar
+        nuevas ofertas de viaje en milisegundos — antes de que la pantalla se actualice. El contenido
+        de las notificaciones se analiza al instante y se descarta. Nunca se almacena ni envía a
+        ningún lado. Si no lo activás, la app funciona igual (solo un poco más lenta).
+      </p>
+      <div class="perm-guarantee">Las notificaciones leídas se descartan inmediatamente, no se almacenan.</div>
+    </div>
+
+    <!-- POST_NOTIFICATIONS -->
+    <div class="perm-card">
+      <div class="perm-title">🔔 Enviar Notificaciones del sistema</div>
+      <p class="perm-desc">
+        Requerido en Android 13 en adelante para que el servicio en segundo plano pueda mostrar
+        su estado en la barra de notificaciones ("IA Driver Calc Pro activo"). Es la notificación
+        obligatoria de servicio en primer plano que Android exige para apps que funcionan mientras
+        el celular está en uso. No se envían notificaciones de marketing ni spam.
+      </p>
+      <div class="perm-guarantee">Solo se muestra el estado del servicio. Cero marketing.</div>
+    </div>
+  </section>
+
+  <!-- ── 4. TERCEROS ── -->
+  <section id="terceros" class="amber-top">
+    <h2 class="section-title"><span class="ico">☁️</span> 4. Servicios de terceros</h2>
+    <p>
+      La única integración externa es <strong style="color:var(--text)">Firebase (Google)</strong>,
+      usada de forma muy específica:
+    </p>
+
+    <h3>Firebase Firestore — Solo lectura</h3>
+    <p>
+      La app descarga datos de eventos de demanda regional (partidos de fútbol, conciertos, vuelos)
+      para el Oráculo de Demanda. Esta descarga es <strong>anónima y unidireccional</strong>:
+      la app lee datos del servidor, pero <strong>nunca escribe datos personales</strong> en Firebase.
+      Firebase puede registrar la dirección IP de la conexión según sus propias políticas
+      (<a href="https://policies.google.com/privacy" target="_blank" style="color:var(--violet)">Política de Google</a>).
+    </p>
+
+    <h3>Firebase Analytics <span class="badge-off">DESHABILITADO</span></h3>
+    <p>Firebase Analytics está explícitamente desactivado en el código de la app. No se recopilan eventos de uso.</p>
+
+    <h3>Firebase Performance <span class="badge-off">DESHABILITADO</span></h3>
+    <p>Firebase Performance Monitoring está desactivado. No se miden tiempos de red ni de pantalla.</p>
+
+    <h3>Firebase Crashlytics <span class="badge-off">DESHABILITADO</span></h3>
+    <p>Crashlytics está desactivado. No se envían reportes de errores automáticos.</p>
+
+    <h3>Sin SDKs de publicidad</h3>
+    <p>
+      La app no incluye AdMob, Facebook Audience Network, ni ningún SDK de publicidad o rastreo.
+      No existen anuncios dentro de la app.
+    </p>
+  </section>
+
+  <!-- ── 5. LOCAL ── -->
+  <section id="local" class="green-top">
+    <h2 class="section-title"><span class="ico">💾</span> 5. Almacenamiento local</h2>
+    <p>
+      La app guarda estadísticas de turnos de trabajo en una base de datos local <strong>(Room/SQLite)</strong>
+      dentro del propio celular:
+    </p>
+    <ul class="guarantee-list">
+      <li>Historial de viajes del turno (monto, kilómetros, minutos) — para calcular ganancias del día.</li>
+      <li>Configuración de umbrales del conductor ($/km mínimo aceptable, etc.).</li>
+      <li>Preferencias de la app (moneda, idioma TTS, configuración de dashcam).</li>
+    </ul>
+    <p>
+      Estos datos <strong>nunca abandonan el celular</strong>. Si desinstalás la app, todos los datos
+      locales se eliminan automáticamente con ella.
+    </p>
+  </section>
+
+  <!-- ── 6. SEGURIDAD ── -->
+  <section id="seguridad">
+    <h2 class="section-title"><span class="ico">🔒</span> 6. Seguridad</h2>
+    <ul class="guarantee-list">
+      <li>Todo el procesamiento de ofertas de viaje ocurre <strong>100% en el dispositivo</strong> sin conexión a internet.</li>
+      <li>El servicio de accesibilidad está configurado para leer <strong>únicamente las apps de rideshare</strong> listadas — no puede leer otras apps aunque estén abiertas.</li>
+      <li>La app no solicita permisos de administrador de dispositivo ni acceso root.</li>
+      <li>El código fuente no contiene APIs de rastreo, fingerprinting de dispositivo ni perfilado de usuarios.</li>
+    </ul>
+  </section>
+
+  <!-- ── 7. MENORES ── -->
+  <section id="menores">
+    <h2 class="section-title"><span class="ico">👶</span> 7. Menores de edad</h2>
+    <p>
+      Esta aplicación está dirigida exclusivamente a conductores profesionales adultos (18 años o más).
+      No recopilamos intencionalmente información de menores de edad. Si tenés menos de 18 años,
+      no uses esta app.
+    </p>
+  </section>
+
+  <!-- ── 8. CAMBIOS ── -->
+  <section id="cambios">
+    <h2 class="section-title"><span class="ico">📝</span> 8. Cambios a esta política</h2>
+    <p>
+      Si realizamos cambios significativos a esta política de privacidad, actualizaremos la fecha
+      "Última actualización" al inicio de esta página. Los cambios menores (correcciones ortográficas,
+      aclaraciones) no requieren notificación. Los cambios que amplíen el uso de datos se notificarán
+      dentro de la app en la próxima actualización.
+    </p>
+    <p>
+      Podés revisar siempre la versión más reciente en esta misma URL.
+    </p>
+  </section>
+
+  <!-- ── 9. CONTACTO ── -->
+  <section id="contacto">
+    <h2 class="section-title"><span class="ico">✉️</span> 9. Contacto</h2>
+    <div class="contact-box">
+      <p>
+        Si tenés preguntas sobre esta política de privacidad, el manejo de datos, o querés solicitar
+        información sobre los datos almacenados localmente en tu dispositivo, contactanos:
+      </p>
+      <a class="btn-contact" href="mailto:soporte@sudocapi.com">soporte@sudocapi.com</a>
+      <p style="margin-top:14px; font-size:13px;">
+        Nos comprometemos a responder dentro de los 5 días hábiles.
+      </p>
+    </div>
+  </section>
+
+</div><!-- /container -->
+
+<!-- ════════════════════════════════════ FOOTER ════════════════════════════════════ -->
+<footer>
+  <p>© 2026 <strong>Nicolás Gabriel Espínola — Sudo Capi</strong></p>
+  <p style="margin-top:6px;">IA Driver Calc Pro · Todos los derechos reservados</p>
+  <p style="margin-top:6px; color: var(--dim)">
+    Esta política aplica a la versión con package <code style="color:var(--violet)">com.sudocapi.ia_driver_calc_pro</code>
+  </p>
+</footer>
+
+</body>
+</html>

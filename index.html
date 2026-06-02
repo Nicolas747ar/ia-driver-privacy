@@ -197,6 +197,18 @@
       margin-left: 6px;
       vertical-align: middle;
     }
+    .badge-on {
+      display: inline-block;
+      background: rgba(105, 240, 174, 0.15);
+      border: 1px solid rgba(105, 240, 174, 0.35);
+      border-radius: 6px;
+      padding: 2px 8px;
+      font-size: 11px;
+      color: var(--green);
+      font-weight: 700;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
 
     /* ── Guarantees ── */
     .guarantee-list {
@@ -271,17 +283,17 @@
   <span class="shield">🛡️</span>
   <h1>IA Driver Calc Pro</h1>
   <p class="tagline">POLÍTICA DE PRIVACIDAD</p>
-  <span class="badge-date">Última actualización: Mayo 2026</span>
+  <span class="badge-date">Última actualización: Junio 2026</span>
 </header>
 
 <!-- ── Trust strip ── -->
 <div class="trust-strip">
-  <span class="pill">✓ Sin registro</span>
-  <span class="pill">✓ Sin datos personales</span>
+  <span class="pill">✓ Viajes procesados en el celular</span>
   <span class="pill">✓ Sin publicidad</span>
-  <span class="pill">✓ Todo procesamiento local</span>
   <span class="pill">✓ Sin venta de datos</span>
-  <span class="pill">✓ Sin rastreo</span>
+  <span class="pill">✓ Sin rastreo publicitario</span>
+  <span class="pill">✓ Telemetría anónima</span>
+  <span class="pill">✓ Sin acceso a otras apps</span>
 </div>
 
 <!-- ════════════════════════════════════ CONTENT ════════════════════════════════════ -->
@@ -310,7 +322,9 @@
       <strong style="color:var(--text)">IA Driver Calc Pro</strong> es una aplicación Android desarrollada por
       <strong style="color:var(--text)">Nicolás Gabriel Espínola (Sudo Capi)</strong> para conductores profesionales
       de plataformas de rideshare (Uber, DiDi, Cabify, 99, InDriver). La app analiza ofertas de viaje en tiempo
-      real y calcula si cada viaje es rentable — todo sin internet y sin enviar ningún dato fuera de tu celular.
+      real y calcula si cada viaje es rentable. El análisis de las ofertas y los datos de tus viajes
+      ocurren y permanecen en el celular; la app usa internet solo para telemetría anónima de errores y
+      uso, datos de demanda regional y —en la versión Premium— para validar tu licencia.
     </p>
 
     <table>
@@ -336,7 +350,7 @@
 
     <div class="no-collect-grid">
       <div class="no-item">Nombre o apellido</div>
-      <div class="no-item">Correo electrónico</div>
+      <div class="no-item">Datos biométricos</div>
       <div class="no-item">Número de teléfono</div>
       <div class="no-item">DNI o identificación</div>
       <div class="no-item">Fotos o videos personales</div>
@@ -349,10 +363,16 @@
       <div class="no-item">Actividad en otras apps</div>
     </div>
 
+    <p style="margin-top:8px">
+      <strong style="color:var(--text)">Importante — dos versiones:</strong> la versión <strong>gratuita
+      (Google Play)</strong> no requiere cuenta: no te registrás ni iniciás sesión. La versión
+      <strong>Premium (descarga directa)</strong> sí usa inicio de sesión con Google para identificar
+      tu licencia y MercadoPago para procesar el pago — se detalla en la sección 4.
+    </p>
     <ul class="guarantee-list">
-      <li>No existe ningún servidor de Sudo Capi que almacene datos personales de usuarios.</li>
-      <li>No existe ningún sistema de cuentas: no te registrás ni iniciás sesión.</li>
-      <li>Jamás se venden, comparten ni comercializan datos de ningún tipo con terceros.</li>
+      <li>No vendemos, alquilamos ni comercializamos datos de ningún tipo con terceros, en ninguna versión.</li>
+      <li>El contenido de las ofertas de viaje y de la pantalla se procesa en el celular y nunca se sube a un servidor.</li>
+      <li>No usamos tus datos para publicidad ni para crear perfiles del usuario.</li>
     </ul>
   </section>
 
@@ -440,14 +460,41 @@
       (<a href="https://policies.google.com/privacy" target="_blank" style="color:var(--violet)">Política de Google</a>).
     </p>
 
-    <h3>Firebase Analytics <span class="badge-off">DESHABILITADO</span></h3>
-    <p>Firebase Analytics está explícitamente desactivado en el código de la app. No se recopilan eventos de uso.</p>
+    <h3>Firebase Analytics <span class="badge-on">ACTIVO</span></h3>
+    <p>
+      Recopila estadísticas de uso <strong>anónimas y agregadas</strong> (qué funciones se usan, modelo
+      de dispositivo, versión de Android, idioma) para entender qué mejorar. Google asigna un
+      identificador de instalación anónimo; <strong>no se recopila el Advertising ID</strong> (desactivado
+      en la app) y los datos no se usan para publicidad. Nunca se envían el contenido de las ofertas,
+      los montos de los viajes ni el texto de la pantalla.
+    </p>
+
+    <h3>Firebase Crashlytics <span class="badge-on">ACTIVO</span></h3>
+    <p>
+      Envía <strong>reportes de errores</strong> cuando la app se cierra inesperadamente (tipo de error,
+      línea de código, modelo de dispositivo, versión de Android) para poder corregir fallas. Los reportes
+      son técnicos y anónimos: no incluyen datos personales ni información de tus viajes.
+    </p>
 
     <h3>Firebase Performance <span class="badge-off">DESHABILITADO</span></h3>
-    <p>Firebase Performance Monitoring está desactivado. No se miden tiempos de red ni de pantalla.</p>
+    <p>Firebase Performance Monitoring está desactivado: no se miden tiempos de red ni de pantalla.</p>
 
-    <h3>Firebase Crashlytics <span class="badge-off">DESHABILITADO</span></h3>
-    <p>Crashlytics está desactivado. No se envían reportes de errores automáticos.</p>
+    <h3>🔑 Versión Premium — Inicio de sesión y pago</h3>
+    <p>
+      Lo siguiente aplica <strong>solo a la versión Premium de descarga directa</strong> — la versión de
+      Google Play es libre, sin cuenta ni pago dentro de la app:
+    </p>
+    <ul class="guarantee-list">
+      <li><strong>Inicio de sesión con Google:</strong> usamos tu dirección de correo únicamente para
+        identificar tu licencia (a qué cuenta pertenece el acceso pagado). No leemos tus contactos, tu
+        Gmail ni ningún otro dato de tu cuenta de Google.</li>
+      <li><strong>MercadoPago:</strong> el pago lo procesa MercadoPago en su propio entorno. La app
+        <strong>nunca ve ni almacena los datos de tu tarjeta</strong>; solo recibe el estado del pago
+        (aprobado/rechazado) para activar la licencia. Aplican las políticas de
+        <a href="https://www.mercadopago.com.ar/privacidad" target="_blank" style="color:var(--violet)">MercadoPago</a>.</li>
+      <li><strong>Firebase Auth / Firestore:</strong> guardamos el estado de tu licencia (vigencia, ID de
+        orden) asociado a tu correo, para validar el acceso. No se comparte con terceros.</li>
+    </ul>
 
     <h3>Sin SDKs de publicidad</h3>
     <p>
@@ -528,6 +575,9 @@
 
 <!-- ════════════════════════════════════ FOOTER ════════════════════════════════════ -->
 <footer>
+  <p style="margin-bottom:14px;">
+    <a href="terminos.html" style="color:var(--violet); text-decoration:none; font-weight:700; border:1px solid var(--border); border-radius:10px; padding:8px 18px;">📄 Ver Términos y Condiciones</a>
+  </p>
   <p>© 2026 <strong>Nicolás Gabriel Espínola — Sudo Capi</strong></p>
   <p style="margin-top:6px;">IA Driver Calc Pro · Todos los derechos reservados</p>
   <p style="margin-top:6px; color: var(--dim)">

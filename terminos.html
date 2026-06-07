@@ -23,7 +23,7 @@
     .shield { font-size:56px; margin-bottom:16px; display:block; }
     header h1 {
       font-size:clamp(22px,5vw,32px); font-weight:800; letter-spacing:-0.5px;
-      background:linear-gradient(90deg,var(--violet),#C080FF);
+      background:linear-gradient(90deg,#D060FF,#60D0FF);
       -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
       margin-bottom:8px;
     }
@@ -76,12 +76,27 @@
       .container { padding:24px 14px 60px; }
       section { padding:20px 16px; }
     }
+
+    .brand-logo {
+      width:78px; height:78px; border-radius:50%; display:block; margin:0 auto 18px;
+      border:2px solid rgba(96,208,255,.45);
+      box-shadow:0 0 26px rgba(160,64,255,.45), 0 0 10px rgba(96,208,255,.35);
+      object-fit:cover;
+    }
+    svg.ico { width:20px; height:20px; flex-shrink:0; stroke:var(--violet); fill:none;
+      stroke-width:2.1; stroke-linecap:round; stroke-linejoin:round; }
+    section.green-top svg.ico { stroke:var(--green); }
+    section.amber-top svg.ico { stroke:var(--amber); }
+    section.red-top   svg.ico { stroke:var(--red); }
+    .footer-ico { width:15px; height:15px; vertical-align:-3px; margin-right:6px;
+      stroke:currentColor; fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+    svg.mate-ico{width:15px;height:15px;vertical-align:-3px;margin:0 4px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;}
   </style>
 </head>
 <body>
 
 <header>
-  <span class="shield">📄</span>
+  <img class="brand-logo" src="logo.png" alt="IA Driver Calc Pro" />
   <h1>IA Driver Calc Pro</h1>
   <p class="tagline">TÉRMINOS Y CONDICIONES DE USO</p>
   <span class="badge-date">Última actualización: Junio 2026</span>
@@ -109,7 +124,7 @@
   </nav>
 
   <section id="aceptacion">
-    <h2 class="section-title"><span class="ico">✅</span> 1. Aceptación de los términos</h2>
+    <h2 class="section-title"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="8.5 12.5 11 15 16 9"/></svg> 1. Aceptación de los términos</h2>
     <p>
       Estos Términos y Condiciones ("Términos") regulan el uso de la aplicación
       <strong style="color:var(--text)">IA Driver Calc Pro</strong> ("la app"), desarrollada por
@@ -120,7 +135,7 @@
   </section>
 
   <section id="servicio" class="green-top">
-    <h2 class="section-title"><span class="ico">🧮</span> 2. Qué es (y qué no es) la app</h2>
+    <h2 class="section-title"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="11"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg> 2. Qué es (y qué no es) la app</h2>
     <p>
       IA Driver Calc Pro es una <strong>herramienta informativa y de asistencia</strong> para conductores
       de plataformas de movilidad. Lee en pantalla los datos de las ofertas de viaje (precio, distancia,
@@ -135,7 +150,7 @@
   </section>
 
   <section id="noafiliacion" class="amber-top">
-    <h2 class="section-title"><span class="ico">🏷️</span> 3. No afiliación con las plataformas</h2>
+    <h2 class="section-title"><svg class="ico" viewBox="0 0 24 24"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg> 3. No afiliación con las plataformas</h2>
     <p>
       IA Driver Calc Pro es un producto <strong>independiente</strong>. <strong>No está afiliada,
       asociada, patrocinada ni avalada</strong> por Uber, DiDi, Cabify, 99, InDriver ni ninguna otra
@@ -146,7 +161,7 @@
   </section>
 
   <section id="noautomatiza" class="red-top">
-    <h2 class="section-title"><span class="ico">🙅</span> 4. La app no opera por vos</h2>
+    <h2 class="section-title"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="5" y1="5" x2="19" y2="19"/></svg> 4. La app no opera por vos</h2>
     <p>
       La app <strong>solo lee y te informa</strong>. <strong>No acepta, no rechaza, no cancela viajes</strong>
       ni realiza ninguna acción automática dentro de las apps de las plataformas.
@@ -162,7 +177,7 @@
   </section>
 
   <section id="garantia">
-    <h2 class="section-title"><span class="ico">⚠️</span> 5. Sin garantía y límite de responsabilidad</h2>
+    <h2 class="section-title"><svg class="ico" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> 5. Sin garantía y límite de responsabilidad</h2>
     <p>
       La app se ofrece <strong>"tal cual" y "según disponibilidad"</strong>. Los cálculos de rentabilidad
       son <strong>estimaciones</strong> basadas en el texto leído en pantalla y en los parámetros que vos
@@ -181,7 +196,7 @@
   </section>
 
   <section id="uso">
-    <h2 class="section-title"><span class="ico">📋</span> 6. Uso correcto y responsabilidad del usuario</h2>
+    <h2 class="section-title"><svg class="ico" viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg> 6. Uso correcto y responsabilidad del usuario</h2>
     <ul class="list">
       <li>Debés ser mayor de 18 años y conductor habilitado en tu jurisdicción.</li>
       <li>Te comprometés a usar la app conforme a la ley y a los términos de las plataformas que utilices.</li>
@@ -191,7 +206,7 @@
   </section>
 
   <section id="licencia" class="amber-top">
-    <h2 class="section-title"><span class="ico">🔑</span> 7. Licencia, pagos y renovación (versión Premium)</h2>
+    <h2 class="section-title"><svg class="ico" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><line x1="10.85" y1="12.15" x2="19" y2="4"/><line x1="18" y1="5" x2="20.5" y2="7.5"/><line x1="15" y1="8" x2="17" y2="10"/></svg> 7. Licencia, pagos y renovación (versión Premium)</h2>
     <p>
       Existen dos formas de distribución:
     </p>
@@ -210,7 +225,7 @@
   </section>
 
   <section id="reembolsos">
-    <h2 class="section-title"><span class="ico">↩️</span> 8. Reembolsos y cancelación</h2>
+    <h2 class="section-title"><svg class="ico" viewBox="0 0 24 24"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg> 8. Reembolsos y cancelación</h2>
     <p>
       Si la ley de tu país te otorga un <strong>derecho de arrepentimiento</strong> (en Argentina,
       conforme a la Ley de Defensa del Consumidor N.º 24.240, dentro de los 10 días corridos de la
@@ -218,14 +233,10 @@
       soporte. Pasado ese plazo, salvo falla atribuible a la app, los períodos de licencia ya iniciados
       no son reembolsables. Cada caso se evalúa de buena fe.
     </p>
-    <div class="callout">
-      <strong>Nota:</strong> revisá y ajustá esta cláusula a la legislación de cada mercado donde
-      distribuyas (AR/BR/MX/CL/CO/PE) y a tu política comercial real antes de publicar.
-    </div>
   </section>
 
   <section id="pi">
-    <h2 class="section-title"><span class="ico">©️</span> 9. Propiedad intelectual</h2>
+    <h2 class="section-title"><svg class="ico" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg> 9. Propiedad intelectual</h2>
     <p>
       La app, su código, diseño, marca "Sudo Capi", textos y elementos gráficos son propiedad del
       desarrollador y están protegidos por las leyes de propiedad intelectual. La licencia de uso no
@@ -234,7 +245,7 @@
   </section>
 
   <section id="privacidad" class="green-top">
-    <h2 class="section-title"><span class="ico">🛡️</span> 10. Privacidad</h2>
+    <h2 class="section-title"><svg class="ico" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> 10. Privacidad</h2>
     <p>
       El tratamiento de datos se rige por nuestra
       <a href="index.html" style="color:var(--violet); font-weight:700;">Política de Privacidad</a>,
@@ -245,7 +256,7 @@
   </section>
 
   <section id="cambios">
-    <h2 class="section-title"><span class="ico">📝</span> 11. Cambios y vigencia</h2>
+    <h2 class="section-title"><svg class="ico" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.12 2.12 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> 11. Cambios y vigencia</h2>
     <p>
       Podemos actualizar estos Términos. Publicaremos la versión vigente en esta URL y actualizaremos la
       fecha de "Última actualización". El uso continuado de la app tras un cambio implica la aceptación de
@@ -254,23 +265,20 @@
   </section>
 
   <section id="ley">
-    <h2 class="section-title"><span class="ico">⚖️</span> 12. Ley aplicable y jurisdicción</h2>
+    <h2 class="section-title"><svg class="ico" viewBox="0 0 24 24"><line x1="12" y1="3" x2="12" y2="21"/><line x1="5" y1="7" x2="19" y2="7"/><path d="M5 7l-3 6a3 3 0 0 0 6 0z"/><path d="M19 7l-3 6a3 3 0 0 0 6 0z"/><line x1="8" y1="21" x2="16" y2="21"/></svg> 12. Ley aplicable y jurisdicción</h2>
     <p>
       Estos Términos se rigen por las leyes de la <strong>República Argentina</strong>. Ante cualquier
       controversia, las partes se someten a los tribunales ordinarios competentes del domicilio del
       desarrollador, sin perjuicio de los derechos irrenunciables que la legislación de defensa del
       consumidor reconozca al usuario en su país de residencia.
     </p>
-    <div class="callout">
-      <strong>Nota:</strong> confirmá la jurisdicción/domicilio legal antes de publicar (placeholder: Argentina).
-    </div>
   </section>
 
   <section id="contacto">
-    <h2 class="section-title"><span class="ico">✉️</span> 13. Contacto</h2>
+    <h2 class="section-title"><svg class="ico" viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><polyline points="22 6 12 13 2 6"/></svg> 13. Contacto</h2>
     <div class="contact-box">
       <p>Por consultas sobre estos Términos, licencias o reembolsos:</p>
-      <a class="btn-contact" href="mailto:soporte@sudocapi.com">soporte@sudocapi.com</a>
+      <a class="btn-contact" href="mailto:nicolas@inovahu.com">nicolas@inovahu.com</a>
       <p style="margin-top:14px; font-size:13px;">Respondemos dentro de los 5 días hábiles.</p>
     </div>
   </section>
@@ -279,9 +287,10 @@
 
 <footer>
   <p style="margin-bottom:14px;">
-    <a href="index.html" style="color:var(--violet); text-decoration:none; font-weight:700; border:1px solid var(--border); border-radius:10px; padding:8px 18px;">🛡️ Ver Política de Privacidad</a>
+    <a href="index.html" style="color:var(--violet); text-decoration:none; font-weight:700; border:1px solid var(--border); border-radius:10px; padding:8px 18px;"><svg class="footer-ico" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Ver Política de Privacidad</a>
   </p>
   <p>© 2026 <strong>Nicolás Gabriel Espínola — Sudo Capi</strong></p>
+  <p style="margin-top:6px;">Hecho con <svg class="mate-ico" viewBox="0 0 24 24"><path d="M6.5 10.5h9v2a4.5 4.5 0 0 1-4.5 4.5 4.5 4.5 0 0 1-4.5-4.5z"/><line x1="14.5" y1="4.5" x2="11" y2="10.5"/><circle cx="15" cy="4" r="1"/></svg> en Argentina</p>
   <p style="margin-top:6px;">IA Driver Calc Pro · Todos los derechos reservados</p>
 </footer>
 

@@ -215,20 +215,22 @@
       list-style: none;
       margin-top: 14px;
     }
+    /* Bloque con la tilde al costado y no flex: en flex, cada <strong> del renglón
+       quedaba en su propia columna y el texto se partía en pedazos. */
     .guarantee-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
+      position: relative;
+      padding-left: 22px;
       margin-bottom: 10px;
       color: var(--sub);
       font-size: 14px;
     }
     .guarantee-list li::before {
       content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
       color: var(--green);
       font-weight: 700;
-      flex-shrink: 0;
-      margin-top: 2px;
     }
 
     /* ── Contact ── */
@@ -292,7 +294,7 @@
   <img class="brand-logo" src="logo.png" alt="IA Driver Calc Pro" />
   <h1>IA Driver Calc Pro</h1>
   <p class="tagline">POLÍTICA DE PRIVACIDAD</p>
-  <span class="badge-date">Última actualización: Junio 2026</span>
+  <span class="badge-date">Última actualización: Octubre 2026</span>
 </header>
 
 <!-- ── Trust strip ── -->
@@ -320,6 +322,8 @@
       <li><a href="#seguridad">Seguridad</a></li>
       <li><a href="#menores">Menores de edad</a></li>
       <li><a href="#cambios">Cambios a esta política</a></li>
+      <li><a href="#conservacion">Conservación de los datos</a></li>
+      <li><a href="#eliminar">Tus derechos y cómo eliminar tu cuenta</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ol>
   </nav>
@@ -332,8 +336,9 @@
       <strong style="color:var(--text)">Nicolás Gabriel Espínola (Sudo Capi)</strong> para conductores profesionales
       de plataformas de rideshare (Uber, DiDi, Cabify, 99, InDriver). La app analiza ofertas de viaje en tiempo
       real y calcula si cada viaje es rentable. El análisis de las ofertas y los datos de tus viajes
-      ocurren y permanecen en el celular; la app usa internet solo para telemetría anónima de errores y
-      uso, datos de demanda regional y —en la versión Premium— para validar tu licencia.
+      ocurren y permanecen en el celular. La app usa internet para: tu cuenta y tu licencia o
+      suscripción; ubicar en el mapa del Histórico la dirección de embarque de un viaje que aceptaste;
+      descargar datos de demanda regional; y telemetría de errores y uso. Todo se detalla abajo.
     </p>
 
     <table>
@@ -343,7 +348,7 @@
       <tr><td>Desarrollador</td><td>Nicolás Gabriel Espínola / Sudo Capi</td></tr>
       <tr><td>Contacto</td><td>nicolas@inovahu.com</td></tr>
       <tr><td>Mercados</td><td>Argentina, Brasil, México, Colombia, Perú, Chile</td></tr>
-      <tr><td>Vigencia</td><td>Mayo 2026 en adelante</td></tr>
+      <tr><td>Vigencia</td><td>Octubre 2026 en adelante</td></tr>
     </table>
 
     <p>
@@ -364,7 +369,7 @@
       <div class="no-item">DNI o identificación</div>
       <div class="no-item">Fotos o videos personales</div>
       <div class="no-item">Historial de viajes de Uber</div>
-      <div class="no-item">Ubicación exacta GPS</div>
+      <div class="no-item">Historial de tus recorridos</div>
       <div class="no-item">Datos bancarios o de pago</div>
       <div class="no-item">Contactos del celular</div>
       <div class="no-item">Mensajes o emails</div>
@@ -373,14 +378,15 @@
     </div>
 
     <p style="margin-top:8px">
-      <strong style="color:var(--text)">Importante — dos versiones:</strong> la versión <strong>gratuita
-      (Google Play)</strong> no requiere cuenta: no te registrás ni iniciás sesión. La versión
-      <strong>Premium (descarga directa)</strong> sí usa inicio de sesión con Google para identificar
-      tu licencia y MercadoPago para procesar el pago — se detalla en la sección 4.
+      <strong style="color:var(--text)">Importante — cuenta y pago:</strong> las dos versiones usan una
+      <strong>cuenta</strong> (con Google o con correo y contraseña) para saber a quién pertenece la
+      licencia. En la versión de <strong>Google Play</strong> la suscripción la cobra Google Play; en la
+      versión de <strong>descarga directa</strong>, MercadoPago. Se detalla en la sección 4, y cómo
+      eliminar tu cuenta, en la sección 10.
     </p>
     <ul class="guarantee-list">
       <li>No vendemos, alquilamos ni comercializamos datos de ningún tipo con terceros, en ninguna versión.</li>
-      <li>El contenido de las ofertas de viaje y de la pantalla se procesa en el celular y nunca se sube a un servidor.</li>
+      <li>El contenido de las ofertas de viaje y de la pantalla se procesa en el celular. Lo único que sale es la dirección de embarque de un viaje que aceptaste, hacia el servicio de direcciones de Google, para ubicarlo en tu Histórico (sección 3).</li>
       <li>No usamos tus datos para publicidad ni para crear perfiles del usuario.</li>
     </ul>
   </section>
@@ -398,21 +404,26 @@
         para extraer datos de la oferta de viaje: precio, kilómetros y minutos. Con esos datos calcula
         si el viaje es rentable y lo anuncia en voz alta. <strong>Solo lee las apps listadas</strong>
         en la configuración — nunca lee WhatsApp, bancarias, mensajes ni ninguna otra app.
-        Todo el procesamiento ocurre en el chip del celular. Ningún texto de pantalla sale del dispositivo.
+        El análisis ocurre en el celular. Una sola excepción: la <strong>dirección de embarque</strong>
+        de un viaje que aceptaste se envía al servicio de direcciones de Google para ubicarla en el mapa
+        de tu Histórico.
       </p>
-      <div class="perm-guarantee">No se almacena ni transmite ningún texto capturado de pantalla.</div>
+      <div class="perm-guarantee">Fuera de esa dirección, ningún texto de la pantalla se envía ni se guarda en servidores.</div>
     </div>
 
     <!-- GPS -->
     <div class="perm-card">
-      <div class="perm-title"><svg class="perm-ico" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Ubicación GPS en segundo plano</div>
+      <div class="perm-title"><svg class="perm-ico" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Ubicación</div>
       <p class="perm-desc">
-        Se usa para el <strong>Oráculo de Demanda</strong>: comparar la posición del conductor con las
-        zonas de alta demanda de su ciudad (eventos, partidos, vuelos). Tu ubicación nunca se sube a
-        ningún servidor. Solo se usa localmente para calcular qué eventos están cerca.
-        No se guarda ningún historial de ubicaciones.
+        Se usa para tres cosas: el <strong>Oráculo de Demanda</strong> (comparar tu posición con las
+        zonas de alta demanda de tu ciudad); los <strong>kilómetros de tu jornada</strong>, que se miden
+        sólo mientras la jornada está en curso, con la notificación «Turno en curso» a la vista; y
+        <strong>buscar la dirección de embarque cerca tuyo</strong>: junto con la dirección, al servicio
+        de Google se le manda una zona aproximada alrededor de tu posición (decenas de kilómetros), para
+        que no confunda calles con el mismo nombre en otras ciudades.
+        La versión de Google Play no usa la ubicación en segundo plano.
       </p>
-      <div class="perm-guarantee">La ubicación GPS nunca abandona tu celular.</div>
+      <div class="perm-guarantee">Tus posiciones y tus recorridos no se suben a nuestros servidores ni se guardan como historial.</div>
     </div>
 
     <!-- Cámara y micrófono -->
@@ -443,10 +454,11 @@
     <div class="perm-card">
       <div class="perm-title"><svg class="perm-ico" viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>Enviar Notificaciones del sistema</div>
       <p class="perm-desc">
-        Requerido en Android 13 en adelante para que el servicio en segundo plano pueda mostrar
-        su estado en la barra de notificaciones ("IA Driver Calc Pro activo"). Es la notificación
-        obligatoria de servicio en primer plano que Android exige para apps que funcionan mientras
-        el celular está en uso. No se envían notificaciones de marketing ni spam.
+        Requerido en Android 13 en adelante para que la app pueda mostrar su estado en la barra de
+        notificaciones («IA Driver Calc Pro activo», «Turno en curso» con el tiempo y los km de la
+        jornada, o el aviso de que el GPS de la jornada se detuvo). Son las notificaciones que Android
+        exige a una app que trabaja mientras el celular está en uso. No se envían notificaciones de
+        marketing ni spam.
       </p>
       <div class="perm-guarantee">Solo se muestra el estado del servicio. Cero marketing.</div>
     </div>
@@ -456,17 +468,48 @@
   <section id="terceros" class="amber-top">
     <h2 class="section-title"><svg class="ico" viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg> 4. Servicios de terceros</h2>
     <p>
-      La única integración externa es <strong style="color:var(--text)">Firebase (Google)</strong>,
-      usada de forma muy específica:
+      Usamos servicios de <strong style="color:var(--text)">Google</strong> (Firebase, Google Play y su
+      servicio de direcciones y mapas) y, en la versión de descarga directa,
+      <strong style="color:var(--text)">MercadoPago</strong>. Ninguno recibe datos para publicidad.
     </p>
 
-    <h3>Firebase Firestore — Solo lectura</h3>
+    <h3>Firebase Authentication — tu cuenta</h3>
     <p>
-      La app descarga datos de eventos de demanda regional (partidos de fútbol, conciertos, vuelos)
-      para el Oráculo de Demanda. Esta descarga es <strong>anónima y unidireccional</strong>:
-      la app lee datos del servidor, pero <strong>nunca escribe datos personales</strong> en Firebase.
-      Firebase puede registrar la dirección IP de la conexión según sus propias políticas
-      (<a href="https://policies.google.com/privacy" target="_blank" style="color:var(--violet)">Política de Google</a>).
+      Para iniciar sesión con Google o con correo y contraseña. Guardamos tu <strong>correo</strong> para
+      identificar tu licencia o suscripción. No leemos tus contactos, tu Gmail ni ningún otro dato de tu
+      cuenta de Google.
+    </p>
+
+    <h3>Firebase Firestore y Cloud Functions</h3>
+    <ul class="guarantee-list">
+      <li><strong>Leemos</strong> datos de demanda regional (partidos, conciertos, vuelos) para el Oráculo.</li>
+      <li><strong>Guardamos</strong> el estado de tu licencia o suscripción (vigencia, plan, número de
+        orden) asociado a tu cuenta, el registro de tus pagos (monto, fecha, medio) y, sólo si lo
+        aceptaste, tu correo para ofertas.</li>
+      <li>Firebase puede registrar la dirección IP de la conexión según sus propias políticas
+        (<a href="https://policies.google.com/privacy" target="_blank" style="color:var(--violet)">Política de Google</a>).</li>
+    </ul>
+
+    <h3>Google Play — suscripción (versión de Google Play)</h3>
+    <p>
+      La suscripción la cobra Google Play. La app nunca ve tu tarjeta: recibimos el estado de la compra
+      (su identificador, su vigencia y si se renovó o canceló) para activar tu licencia. Aplican las
+      políticas de Google Play.
+    </p>
+
+    <h3>MercadoPago — pago (versión de descarga directa)</h3>
+    <p>
+      El pago lo procesa MercadoPago en su propio entorno. La app <strong>nunca ve ni almacena los datos
+      de tu tarjeta</strong>; sólo recibe el estado del pago (aprobado/rechazado) para activar la licencia.
+      Aplican las políticas de
+      <a href="https://www.mercadopago.com.ar/privacidad" target="_blank" style="color:var(--violet)">MercadoPago</a>.
+    </p>
+
+    <h3>Direcciones y mapas de Google</h3>
+    <p>
+      Cuando aceptás un viaje, la dirección de embarque y una zona aproximada alrededor tuyo se envían al
+      servicio de direcciones de Google para ubicarla; el mapa de tu Histórico se dibuja con Google Maps.
+      Nada de esto se guarda en nuestros servidores.
     </p>
 
     <h3>Firebase Analytics <span class="badge-on">ACTIVO</span></h3>
@@ -488,26 +531,13 @@
     <h3>Firebase Performance <span class="badge-off">DESHABILITADO</span></h3>
     <p>Firebase Performance Monitoring está desactivado: no se miden tiempos de red ni de pantalla.</p>
 
-    <h3><svg class="perm-ico" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><line x1="10.85" y1="12.15" x2="19" y2="4"/><line x1="18" y1="5" x2="20.5" y2="7.5"/><line x1="15" y1="8" x2="17" y2="10"/></svg>Versión Premium — Inicio de sesión y pago</h3>
+    <h3>Ofertas por correo (opcional)</h3>
     <p>
-      Lo siguiente aplica <strong>solo a la versión Premium de descarga directa</strong> — la versión de
-      Google Play es libre, sin cuenta ni pago dentro de la app:
+      Al registrarte podés <strong>tildar opcionalmente</strong> que querés recibir ofertas y cupones.
+      <strong>Sólo si lo activás</strong> usamos tu correo para enviarte promociones. Viene
+      <strong>desmarcado por defecto</strong>, no es obligatorio para usar la app, y podés
+      <strong>darte de baja</strong> desde cualquiera de esos correos cuando quieras.
     </p>
-    <ul class="guarantee-list">
-      <li><strong>Inicio de sesión con Google:</strong> usamos tu dirección de correo únicamente para
-        identificar tu licencia (a qué cuenta pertenece el acceso pagado). No leemos tus contactos, tu
-        Gmail ni ningún otro dato de tu cuenta de Google.</li>
-      <li><strong>MercadoPago:</strong> el pago lo procesa MercadoPago en su propio entorno. La app
-        <strong>nunca ve ni almacena los datos de tu tarjeta</strong>; solo recibe el estado del pago
-        (aprobado/rechazado) para activar la licencia. Aplican las políticas de
-        <a href="https://www.mercadopago.com.ar/privacidad" target="_blank" style="color:var(--violet)">MercadoPago</a>.</li>
-      <li><strong>Firebase Auth / Firestore:</strong> guardamos el estado de tu licencia (vigencia, ID de
-        orden) asociado a tu correo, para validar el acceso. No se comparte con terceros.</li>
-      <li><strong>Ofertas por email (opcional):</strong> al registrarte podés <strong>tildar opcionalmente</strong>
-        que querés recibir ofertas y cupones. <strong>Solo si lo activás</strong> usamos tu correo para enviarte
-        promociones. Viene <strong>desmarcado por defecto</strong>, no es obligatorio para usar la app, y podés
-        <strong>darte de baja</strong> desde cualquiera de esos emails cuando quieras. Si no lo activás, nunca te escribimos.</li>
-    </ul>
 
     <h3>Sin SDKs de publicidad</h3>
     <p>
@@ -525,12 +555,16 @@
     </p>
     <ul class="guarantee-list">
       <li>Historial de viajes del turno (monto, kilómetros, minutos) — para calcular ganancias del día.</li>
+      <li>Turnos cerrados con sus kilómetros, horas, gastos y correcciones.</li>
+      <li>Histórico de viajes aceptados con sus direcciones de embarque y destino. Las direcciones de los
+        pasajeros se borran solas a los 30 días.</li>
+      <li>Diarios de diagnóstico: sólo salen del celular si vos los enviás desde Soporte.</li>
       <li>Configuración de umbrales del conductor ($/km mínimo aceptable, etc.).</li>
       <li>Preferencias de la app (moneda, idioma TTS, configuración de dashcam).</li>
     </ul>
     <p>
-      Estos datos <strong>nunca abandonan el celular</strong>. Si desinstalás la app, todos los datos
-      locales se eliminan automáticamente con ella.
+      Estos datos <strong>no se suben a ningún servidor</strong>. Si desinstalás la app, o al eliminar tu
+      cuenta elegís borrar también lo del teléfono, se eliminan todos.
     </p>
   </section>
 
@@ -538,7 +572,8 @@
   <section id="seguridad">
     <h2 class="section-title"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> 6. Seguridad</h2>
     <ul class="guarantee-list">
-      <li>Todo el procesamiento de ofertas de viaje ocurre <strong>100% en el dispositivo</strong> sin conexión a internet.</li>
+      <li>El análisis de las ofertas de viaje ocurre <strong>100% en el dispositivo</strong>, sin conexión a internet.</li>
+      <li>Eliminar la cuenta exige confirmar tu identidad en ese momento: un celular prestado con la sesión abierta no alcanza.</li>
       <li>El servicio de accesibilidad está configurado para leer <strong>únicamente las apps de rideshare</strong> listadas — no puede leer otras apps aunque estén abiertas.</li>
       <li>La app no solicita permisos de administrador de dispositivo ni acceso root.</li>
       <li>El código fuente no contiene APIs de rastreo, fingerprinting de dispositivo ni perfilado de usuarios.</li>
@@ -569,9 +604,48 @@
     </p>
   </section>
 
-  <!-- ── 9. CONTACTO ── -->
+  <!-- ── 9. CONSERVACIÓN ── -->
+  <section id="conservacion">
+    <h2 class="section-title"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 9. Conservación de los datos</h2>
+    <ul class="guarantee-list">
+      <li><strong>Cuenta, licencia y suscripción:</strong> mientras tengas la cuenta.</li>
+      <li><strong>Registros de pagos:</strong> el tiempo que exige la ley fiscal. Si eliminás la cuenta,
+        quedan sin tu correo y sin tu identificador.</li>
+      <li><strong>Correo para ofertas:</strong> hasta que te des de baja o elimines la cuenta.</li>
+      <li><strong>Prueba gratis:</strong> guardamos una huella irreversible de tu correo (no el correo)
+        para que la prueba gratis sea una por persona, aunque se elimine y se vuelva a crear la cuenta.</li>
+      <li><strong>Estadísticas de uso y reportes de errores:</strong> no están atados a tu cuenta; se
+        borran según los plazos de retención de Firebase Analytics y Crashlytics.</li>
+    </ul>
+  </section>
+
+  <!-- ── 10. DERECHOS Y ELIMINACIÓN ── -->
+  <section id="eliminar" class="red-top">
+    <h2 class="section-title"><svg class="ico" viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg> 10. Tus derechos y cómo eliminar tu cuenta</h2>
+    <p>
+      Podés pedirnos acceso a tus datos, corregirlos o eliminarlos (Ley 25.326 en Argentina, LGPD en
+      Brasil y las leyes de tu país).
+    </p>
+    <h3>Eliminar tu cuenta desde la app</h3>
+    <p>
+      <strong>Cuenta → «Eliminar mi cuenta»</strong>. La app te explica qué se borra, te pide confirmar
+      tu identidad y la elimina en el momento. Podés elegir borrar también lo guardado en el celular.
+    </p>
+    <h3>Sin la app</h3>
+    <p>
+      Seguí los pasos de la página <a href="eliminar-cuenta.html" style="color:var(--violet)">Eliminar tu
+      cuenta</a>. Lo hacemos dentro de los 30 días.
+    </p>
+    <ul class="guarantee-list">
+      <li><strong>Se borra:</strong> tu cuenta, tu licencia o suscripción en nuestro servidor y tu correo para ofertas.</li>
+      <li><strong>Se conserva, sin tus datos:</strong> los registros de pagos que la ley obliga a guardar.</li>
+      <li><strong>Tu suscripción de Google Play no se cancela sola</strong>: cancelala en Google Play.</li>
+    </ul>
+  </section>
+
+  <!-- ── 11. CONTACTO ── -->
   <section id="contacto">
-    <h2 class="section-title"><svg class="ico" viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><polyline points="22 6 12 13 2 6"/></svg> 9. Contacto</h2>
+    <h2 class="section-title"><svg class="ico" viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><polyline points="22 6 12 13 2 6"/></svg> 11. Contacto</h2>
     <div class="contact-box">
       <p>
         Si tenés preguntas sobre esta política de privacidad, el manejo de datos, o querés solicitar

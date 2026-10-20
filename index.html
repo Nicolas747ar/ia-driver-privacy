@@ -294,7 +294,7 @@
   <img class="brand-logo" src="logo.png" alt="IA Driver Calc Pro" />
   <h1>IA Driver Calc Pro</h1>
   <p class="tagline">POLÍTICA DE PRIVACIDAD</p>
-  <span class="badge-date">Última actualización: Octubre 2026</span>
+  <span class="badge-date">Última actualización: 20 de octubre de 2026</span>
 </header>
 
 <!-- ── Trust strip ── -->
@@ -303,7 +303,7 @@
   <span class="pill">✓ Sin publicidad</span>
   <span class="pill">✓ Sin venta de datos</span>
   <span class="pill">✓ Sin rastreo publicitario</span>
-  <span class="pill">✓ Telemetría anónima</span>
+  <span class="pill">✓ Telemetría sin datos de tus viajes</span>
   <span class="pill">✓ Sin acceso a otras apps</span>
 </div>
 
@@ -334,10 +334,10 @@
     <p>
       <strong style="color:var(--text)">IA Driver Calc Pro</strong> es una aplicación Android desarrollada por
       <strong style="color:var(--text)">Nicolás Gabriel Espínola (Sudo Capi)</strong> para conductores profesionales
-      de plataformas de rideshare (Uber, DiDi, Cabify, 99, InDriver). La app analiza ofertas de viaje en tiempo
+      de plataformas de rideshare (Uber y 99; la versión de descarga directa lee también DiDi y Cabify). La app analiza ofertas de viaje en tiempo
       real y calcula si cada viaje es rentable. El análisis de las ofertas y los datos de tus viajes
       ocurren y permanecen en el celular. La app usa internet para: tu cuenta y tu licencia o
-      suscripción; ubicar en el mapa del Histórico la dirección de embarque de un viaje que aceptaste;
+      suscripción; ubicar en el mapa las direcciones de embarque y destino de un viaje que aceptaste;
       descargar datos de demanda regional; y telemetría de errores y uso. Todo se detalla abajo.
     </p>
 
@@ -386,7 +386,7 @@
     </p>
     <ul class="guarantee-list">
       <li>No vendemos, alquilamos ni comercializamos datos de ningún tipo con terceros, en ninguna versión.</li>
-      <li>El contenido de las ofertas de viaje y de la pantalla se procesa en el celular. Lo único que sale es la dirección de embarque de un viaje que aceptaste, hacia el servicio de direcciones de Google, para ubicarlo en tu Histórico (sección 3).</li>
+      <li>El contenido de las ofertas de viaje y de la pantalla se procesa en el celular. Sale sólo esto: las direcciones de embarque y destino de un viaje que aceptaste (y a veces tu zona aproximada), hacia el servicio de direcciones de Google, para ubicarlas en el mapa (sección 3); y el reporte de Soporte, únicamente si vos lo enviás (sección 4).</li>
       <li>No usamos tus datos para publicidad ni para crear perfiles del usuario.</li>
     </ul>
   </section>
@@ -400,15 +400,14 @@
     <div class="perm-card">
       <div class="perm-title"><svg class="perm-ico" viewBox="0 0 24 24"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>Servicio de Accesibilidad</div>
       <p class="perm-desc">
-        Lee el texto que muestra la pantalla de las apps de rideshare (Uber, DiDi, Cabify, 99, InDriver)
+        Lee el texto que muestra la pantalla de las apps de rideshare (Uber y 99; en la versión de descarga directa, también DiDi y Cabify)
         para extraer datos de la oferta de viaje: precio, kilómetros y minutos. Con esos datos calcula
         si el viaje es rentable y lo anuncia en voz alta. <strong>Solo lee las apps listadas</strong>
         en la configuración — nunca lee WhatsApp, bancarias, mensajes ni ninguna otra app.
-        El análisis ocurre en el celular. Una sola excepción: la <strong>dirección de embarque</strong>
-        de un viaje que aceptaste se envía al servicio de direcciones de Google para ubicarla en el mapa
-        de tu Histórico.
+        El análisis ocurre en el celular. Una excepción: las <strong>direcciones de embarque y destino</strong>
+        de un viaje que aceptaste se envían al servicio de direcciones de Google para ubicarlas en el mapa.
       </p>
-      <div class="perm-guarantee">Fuera de esa dirección, ningún texto de la pantalla se envía ni se guarda en servidores.</div>
+      <div class="perm-guarantee">Fuera de esas direcciones, ningún texto de la pantalla se envía ni se guarda en servidores, salvo lo que vos elijas mandar en un reporte de Soporte (sección 4).</div>
     </div>
 
     <!-- GPS -->
@@ -418,7 +417,7 @@
         Se usa para tres cosas: el <strong>Oráculo de Demanda</strong> (comparar tu posición con las
         zonas de alta demanda de tu ciudad); los <strong>kilómetros de tu jornada</strong>, que se miden
         sólo mientras la jornada está en curso, con la notificación «Turno en curso» a la vista; y
-        <strong>buscar la dirección de embarque cerca tuyo</strong>: junto con la dirección, al servicio
+        <strong>buscar las direcciones del viaje cerca tuyo</strong>: junto con la dirección, al servicio
         de Google se le manda una zona aproximada alrededor de tu posición (decenas de kilómetros), para
         que no confunda calles con el mismo nombre en otras ciudades.
         La versión de Google Play no usa la ubicación en segundo plano.
@@ -507,25 +506,52 @@
 
     <h3>Direcciones y mapas de Google</h3>
     <p>
-      Cuando aceptás un viaje, la dirección de embarque y una zona aproximada alrededor tuyo se envían al
-      servicio de direcciones de Google para ubicarla; el mapa de tu Histórico se dibuja con Google Maps.
+      Cuando aceptás un viaje, las direcciones de embarque y destino y, a veces, una zona aproximada
+      alrededor tuyo se envían al servicio de direcciones de Google para ubicarlas; el mapa se dibuja con
+      Google Maps.
       Nada de esto se guarda en nuestros servidores.
     </p>
 
     <h3>Firebase Analytics <span class="badge-on">ACTIVO</span></h3>
     <p>
-      Recopila estadísticas de uso <strong>anónimas y agregadas</strong> (qué funciones se usan, modelo
-      de dispositivo, versión de Android, idioma) para entender qué mejorar. Google asigna un
-      identificador de instalación anónimo; <strong>no se recopila el Advertising ID</strong> (desactivado
-      en la app) y los datos no se usan para publicidad. Nunca se envían el contenido de las ofertas,
-      los montos de los viajes ni el texto de la pantalla.
+      Recopila <strong>estadísticas de uso</strong> (qué funciones se usan, modelo de dispositivo, versión
+      de Android, idioma) para entender qué mejorar. Firebase le asigna a cada instalación un
+      <strong>identificador técnico</strong>: es seudónimo, no tu nombre ni tu correo, pero distingue una
+      instalación de otra. <strong>No se recopila el Advertising ID</strong> (desactivado en la app) y los
+      datos no se usan para publicidad. Nunca se envían el contenido de las ofertas, los montos de los
+      viajes ni el texto de la pantalla.
     </p>
 
     <h3>Firebase Crashlytics <span class="badge-on">ACTIVO</span></h3>
     <p>
       Envía <strong>reportes de errores</strong> cuando la app se cierra inesperadamente (tipo de error,
-      línea de código, modelo de dispositivo, versión de Android) para poder corregir fallas. Los reportes
-      son técnicos y anónimos: no incluyen datos personales ni información de tus viajes.
+      línea de código, estado de la app, modelo de dispositivo, versión de Android y un identificador
+      técnico de la instalación que asigna Firebase) para poder corregir fallas. No incluyen el texto de la
+      pantalla, direcciones ni montos. Desde que enviás tu primer reporte de Soporte, los reportes de
+      errores llevan también el <strong>código de diagnóstico</strong> de ese reporte (un código al azar,
+      no tu cuenta) para poder relacionar las dos cosas.
+    </p>
+
+    <h3>Reporte de Soporte (opcional, lo enviás vos)</h3>
+    <p>
+      Desde <strong>Soporte → Enviar relatório</strong> podés mandarnos un reporte cuando algo no salió
+      como esperabas. Se arma en tu celular y <strong>sólo sale si vos lo enviás</strong>, por WhatsApp,
+      correo u otra app que elijas; no pasa por nuestros servidores. Antes de enviarlo ves qué incluye y
+      podés leerlo entero. Contiene:
+    </p>
+    <ul class="guarantee-list">
+      <li>Lo que contaste: el problema que elegiste y tus palabras, si escribiste algo.</li>
+      <li>El estado de la app: permisos, lectura, versión, modelo del celular y el código de diagnóstico.</li>
+      <li>El diario de la app del período que elegiste: viajes leídos, montos, horarios, sumas y errores.</li>
+      <li>Los momentos guardados de ese período (por ejemplo, cuando tocaste NO en un viaje).</li>
+    </ul>
+    <p>
+      Antes de armarlo, la app <strong>quita el texto de las pantallas</strong> y enmascara calles,
+      nombres, documentos y coordenadas, también en lo que escribiste. Esa máscara es automática y
+      <strong>no es una garantía</strong>: puede quedar algún dato que no detecte, por eso conviene no
+      escribir direcciones ni nombres. Una vez enviado, el archivo queda con quien lo recibe y la app no
+      puede borrarlo; la app de mensajería o de correo que uses aplica sus propios términos. Usamos los
+      reportes sólo para responderte y corregir la app, y los guardamos mientras hacen falta para eso.
     </p>
 
     <h3>Firebase Performance <span class="badge-off">DESHABILITADO</span></h3>
@@ -558,7 +584,7 @@
       <li>Turnos cerrados con sus kilómetros, horas, gastos y correcciones.</li>
       <li>Histórico de viajes aceptados con sus direcciones de embarque y destino. Las direcciones de los
         pasajeros se borran solas a los 30 días.</li>
-      <li>Diarios de diagnóstico: sólo salen del celular si vos los enviás desde Soporte.</li>
+      <li>Diarios de diagnóstico: sólo salen del celular si vos enviás un reporte desde Soporte (sección 4).</li>
       <li>Configuración de umbrales del conductor ($/km mínimo aceptable, etc.).</li>
       <li>Preferencias de la app (moneda, idioma TTS, configuración de dashcam).</li>
     </ul>
@@ -614,8 +640,11 @@
       <li><strong>Correo para ofertas:</strong> hasta que te des de baja o elimines la cuenta.</li>
       <li><strong>Prueba gratis:</strong> guardamos una huella irreversible de tu correo (no el correo)
         para que la prueba gratis sea una por persona, aunque se elimine y se vuelva a crear la cuenta.</li>
-      <li><strong>Estadísticas de uso y reportes de errores:</strong> no están atados a tu cuenta; se
-        borran según los plazos de retención de Firebase Analytics y Crashlytics.</li>
+      <li><strong>Estadísticas de uso y reportes de errores:</strong> no están atados a tu cuenta (usan
+        identificadores técnicos de la instalación); se borran según los plazos de retención de Firebase
+        Analytics y Crashlytics.</li>
+      <li><strong>Reportes de Soporte que nos enviás:</strong> sólo mientras hacen falta para resolver el
+        problema.</li>
     </ul>
   </section>
 
